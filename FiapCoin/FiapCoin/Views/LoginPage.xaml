@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:APPCompassSP.ViewModel"
+    x:Class="APPCompassSP.Views.LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="64">
+            <Image Source="icon.png"></Image>
+            
+            <Entry Placeholder="Email" 
+                   x:Name="EntryUsuario" 
+                   Text="{Binding Usuario.Email, Mode=TwoWay}"/>
+            <Entry Placeholder="Senha" 
+                   x:Name="EntrySenha" 
+                   Text="{Binding Usuario.Senha, Mode=TwoWay}" IsPassword="True"/>
+     
+            <Button Text="Entrar" 
+                    Command="{Binding EntrarClickedCommand}" />
+                    
+            <Label Text=""></Label>
+            <Label Text=""></Label>
+            
+            
+            <Button Text="Scannear Acesso" 
+                    Command="{Binding ScannerClickedCommand}" />
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

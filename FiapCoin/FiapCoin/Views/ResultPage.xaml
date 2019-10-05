@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:APPCompassSP.ViewModel"
+             x:Class="APPCompassSP.Views.PosicaoDetalhePage"
+             Title="Detalhe de Investimento">
+    
+    <ContentPage.BindingContext>
+        <vm:PosicaoDetalheViewModel></vm:PosicaoDetalheViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Posição Detalhe"></Label>
+            
+            <Label Text="{Binding Moeda.NomeMoeda}"></Label>
+            
+            <Button x:Name="BotaoVoltar" Text="Voltar" Clicked="VoltarClicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
